@@ -1,72 +1,36 @@
+const firstRow = 'мама мыла раму';
+const secondRow = 'собака друг человека';
 
-let firstName = 'Zmz';
-const lastName = 'Bib';
+function getRow(firstRow, secondRow) {
+	let str1 = firstRow.length;
+	let str2 = secondRow.length;
+	let countStr1 = 0;
+	let countStr2 = 0;
 
-const num = 5;
-const float = 5.5
+	for(let i = 0; i < str1; i++) {
+		if (firstRow.charAt(1) == firstRow[i]) {
+			countStr1 += 1;
+		}
 
-const infinity = 4/0;
-const notaANumber = 'asd' * 8;
+	}
 
-const isMarried = true;
+	for(let i = 0; i < str2; i++) {
+		if (secondRow.charAt(3) == secondRow[i]) {
+			countStr2 += 1;
+		}
 
-const symb = Symbol();
+	}
 
-const bigint = BigInt(2);
 
-let notValue;
+	if(countStr1 > countStr2) {
+		return(firstRow);
+	} else if (countStr1 < countStr2) {
+		return(secondRow);
+	} else if (countStr1 == countStr2) {
+		return(firstRow + ' ' + secondRow);
+	} else {
+		return ('no str');
+	}
+}
 
-const nothing = null;
-console.log(nothing);
-console.log(typeof nothing);
-
-const obj = {};
-const arr = [];
-const fn = function () {};
-console.log(typeof obj);
-console.log(typeof arr);
-console.log(typeof fn);
-
-/** 
- * 
- * 
- * Dynamic 
- * 
- */
-// string
-console.log(typeof String(5));
-
-const hello = 'Hello';
-const world = 'World';
-const concat= hello + world;
-console.log(concat + 5);
-
-// Number
-
-console.log(Number('10'));
-console.log(Number('asd'));
-
-console.log(typeof +'6'); // convert to string
-
-// Boolean
-console.log(Boolean('')); // false
-console.log(Boolean(' ')); // true
-console.log(Boolean(0)); // false
-console.log(Boolean(null)); // false
-
-console.log(!!'asd'); // true
-
-// Operators
-
-let a = 10;
-let b = 7;
-console.log(a + b);
-console.log(a - b);
-console.log(a * b);
-console.log(a / b);
-console.log(a % b); //целое число от деления
-
-console.log(10++);
-console.log(++10);
-console.log(--10);
-console.log(10--);
+console.log(getRow(firstRow, secondRow));
