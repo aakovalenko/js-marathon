@@ -1,72 +1,47 @@
+const character = {
+	name: 'Pikachu',
+	hp: 100,
+	kick: function () { console.log("Kick ME !");}
+};
 
-let firstName = 'Zmz';
-const lastName = 'Bib';
 
-const num = 5;
-const float = 5.5
+console.log(character.name);
+console.log(character['hp']);
 
-const infinity = 4/0;
-const notaANumber = 'asd' * 8;
+const count = 100;
+console.log(character[count]);
 
-const isMarried = true;
+character.power =  'electro';
 
-const symb = Symbol();
+character.hp -= 20;
 
-const bigint = BigInt(2);
+delete character.power;
 
-let notValue;
+character.kick();
 
-const nothing = null;
-console.log(nothing);
-console.log(typeof nothing);
+console.log(character);
 
-const obj = {};
-const arr = [];
-const fn = function () {};
-console.log(typeof obj);
-console.log(typeof arr);
-console.log(typeof fn);
 
-/** 
- * 
- * 
- * Dynamic 
- * 
- */
-// string
-console.log(typeof String(5));
 
-const hello = 'Hello';
-const world = 'World';
-const concat= hello + world;
-console.log(concat + 5);
+/* Arrays */
 
-// Number
+const message = ['Hello', true, 2343];
 
-console.log(Number('10'));
-console.log(Number('asd'));
+console.log(message);
+console.log(message[0]);
 
-console.log(typeof +'6'); // convert to string
+message.push('World');
+console.log(message);
 
-// Boolean
-console.log(Boolean('')); // false
-console.log(Boolean(' ')); // true
-console.log(Boolean(0)); // false
-console.log(Boolean(null)); // false
+/* DOM */
 
-console.log(!!'asd'); // true
 
-// Operators
+const $box = document.getElementById('box');
+console.log($box.innerText = 'Єто див с ид бох');
 
-let a = 10;
-let b = 7;
-console.log(a + b);
-console.log(a - b);
-console.log(a * b);
-console.log(a / b);
-console.log(a % b); //целое число от деления
+$box.style.width = '500px';
+$box.style.backgroundColor = 'green';
 
-console.log(10++);
-console.log(++10);
-console.log(--10);
-console.log(10--);
+$box.addEventListener('click',  function () {
+	alert('tu soverIIIul click!');
+})
